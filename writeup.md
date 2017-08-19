@@ -17,10 +17,10 @@ The goals / steps of this project were the following:
 
 [image1]: ./examples/center.jpg "Center Driving"
 [image2]: ./examples/recovery1.jpg "Recovery Data1"
-[image3]: ./examples/recovery1.jpg "Recovery Data2"
-[image4]: ./examples/recovery1.jpg "Recovery Data3"
-[image5]: ./examples/recovery1.jpg "Recovery Data4"
-[image6]: ./examples/recovery1.jpg "Recovery Data5"
+[image3]: ./examples/recovery2.jpg "Recovery Data2"
+[image4]: ./examples/recovery3.jpg "Recovery Data3"
+[image5]: ./examples/recovery4.jpg "Recovery Data4"
+[image6]: ./examples/recovery5.jpg "Recovery Data5"
 [image7]: ./examples/not-flipped.jpg "Image Before Flipping"
 [image8]: ./examples/flipped.jpg "Flipped Image"
 [image9]: output.PNG "Training Output"
@@ -82,18 +82,16 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
-
 My first step was to use a convolution neural network model similar to the one I used in the traffic sign classification project. I thought this model might be appropriate because it has already proven to be a decent image classification model.
 I found that the model from the traffic sign classification project produced a very large model file (caused by the big fully connected layers) and did not perform very well in the simulator.
 
 Then I switched to the "even more powerful network" by NVIDIA proposed in class. This network has five convolutional layers and three fully connected layers.
 
-To prevent overfitting, I added maxpooling layers to the convol layers and dropout to the fully connected layers.
+To prevent overfitting, I added maxpooling layers to the convolutional layers and dropout to the fully connected layers.
 
 This model performed much better in the sumulator than the first approch described above and also produced smaller model files due to the smaller fully connected layers.
 
-But there were a few spots where the vehicle fell off the track. To improve the driving behavior in these cases, I collected more recovery training data from these critical spots.
+But still there were a few spots where the vehicle fell off the track. To improve the driving behavior in these cases, I collected more recovery training data from these critical spots.
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
